@@ -1,0 +1,41 @@
+{
+  "name": "markdown-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify -o javascripts/bundle.js javascripts/app.js",
+    "watch": "watchify -dvo javascripts/bundle.js javascripts/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "browserify-css": "^0.9.1",
+    "codemirror": "^5.14.2",
+    "github-markdown-css": "^2.3.0",
+    "marked": "^0.3.5",
+    "react": "^15.0.2",
+    "react-codemirror": "^0.2.6",
+    "react-dom": "^15.0.2",
+    "watchify": "^3.7.0",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "browserify-css"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  }
+}

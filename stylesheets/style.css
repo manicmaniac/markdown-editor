@@ -1,0 +1,14 @@
+@import "node_modules/codemirror/lib/codemirror.css";
+@import "node_modules/github-markdown-css/github-markdown.css";
+
+.CodeMirror.cm-s-default {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+#preview {
+  height: 100%;
+  overflow: auto;
+  background-color: ghostwhite;
+}
