@@ -1,6 +1,6 @@
 import React from 'react'
 import CodeMirror from 'react-codemirror'
-import Preview from './Preview'
+import PreviewBox from './PreviewBox'
 import 'codemirror/mode/markdown/markdown'
 import 'whatwg-fetch'
 import '../../stylesheets/style.css'
@@ -57,7 +57,10 @@ export default class App extends React.Component {
           options={options}
           ref='editor'
         />
-        <Preview scrollRelative={this.state.scrollRelative}>{this.state.value}</Preview>
+        <PreviewBox
+          scrollRelative={this.state.scrollRelative}
+        >{this.state.value}
+        </PreviewBox>
       </div>
     )
   }

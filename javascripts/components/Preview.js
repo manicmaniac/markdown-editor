@@ -7,20 +7,18 @@ export default class Preview extends React.Component {
     return { __html: rawMarkup }
   }
 
-  componentDidUpdate() {
-    const { preview, markdownBody } = this.refs
-    preview.scrollTop = markdownBody.offsetHeight * this.props.scrollRelative
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.children.toString() !== nextProps.children.toString()
+  }
+
+  get offsetHeight() {
+    const { markdownBody } = this.refs
+    return markdownBody.offsetHeight
   }
 
   render() {
     return (
-      <div id='preview' ref='preview'>
-        <div ref='markdownBody' className='markdown-body' dangerouslySetInnerHTML={this.rawMarkup()} />
-      </div>
+      <div ref='markdownBody' className='markdown-body' dangerouslySetInnerHTML={this.rawMarkup()} />
     )
   }
-}
-
-Preview.propTypes = {
-  scrollRelative: React.PropTypes.number.isRequired
 }
